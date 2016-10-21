@@ -1,5 +1,4 @@
 # UDPbwEstimator
-Estimating downlink bandwidth 
 A Linux based lightweight tool to estimate available down-link bandwidth. UDPbwEstimator consists of a server that sends n number of back to back UDP packets in the beginning of each second. The receiver tells the server about the number of packets, bursts to be sent. Then receiver 
 calculates the bandwidth using packet arrival times and payloads. 
 
