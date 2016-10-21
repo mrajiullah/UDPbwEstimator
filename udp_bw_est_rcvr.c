@@ -294,8 +294,8 @@ int bind_local(char *local_addr, char *local_port, int socktype){
 
 void usage(){
     fprintf(stderr, "Supported command line arguments\n");
-    fprintf(stderr, "-c : Number of back to back packets to be sent\n");
-    fprintf(stderr, "-b : number of bust to be sent in each second\n");
+    fprintf(stderr, "-c : Number of back to back packets to be sent  in each second\n");
+    fprintf(stderr, "-b : number of bust to be sent\n");
     fprintf(stderr, "-l : Payload length (in bytes)\n");
     fprintf(stderr, "-s : Source IP to bind to\n");
     fprintf(stderr, "-o : source port\n");
