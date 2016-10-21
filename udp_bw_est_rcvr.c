@@ -316,7 +316,7 @@ int main(int argc, char *argv[]){
     char addr_presentation[INET6_ADDRSTRLEN];
     FILE *output_file = NULL;
 
-    while((retval = getopt(argc, argv, "c:b:l:s:o:d:p:w")) != -1){
+    while((retval = getopt(argc, argv, "c:b:l:s:o:d:p:w:")) != -1){
         switch(retval){
             case 'c':
                 num_packets = atoi(optarg);
@@ -348,6 +348,7 @@ int main(int argc, char *argv[]){
         }
     }
 
+
     if((num_bursts == 0) || src_ip == NULL || sender_ip == NULL ||
             sender_port == NULL){
         usage();
@@ -366,7 +367,7 @@ int main(int argc, char *argv[]){
 
     if(file_name != NULL && ((output_file = fopen(file_name, "w")) == NULL)){
         fprintf(stderr, "Failed to open output file\n");
-        
+        printf("Opening files\n");
         exit(EXIT_FAILURE);
     }
 
@@ -386,8 +387,6 @@ int main(int argc, char *argv[]){
         exit(EXIT_FAILURE);
     }
 
-    //I could just have outputted the command line paramteres, but this serves
-    //asa nice example on how use inet_ntop + sockaddr_storage
     if(sender_addr.ss_family == AF_INET){
         inet_ntop(AF_INET, &(((struct sockaddr_in *) &sender_addr)->sin_addr),
                 addr_presentation, INET6_ADDRSTRLEN);
