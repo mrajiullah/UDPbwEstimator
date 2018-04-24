@@ -25,7 +25,7 @@ while True:
        print ((total_bytes*8)/(1024*1024))
        print duration, sizeof_fmt(total_bytes), ((total_bytes*8)/(1024*1024))/duration
        total_bytes=0
-       if count==3:
+       if count==3: # neads to change as the size of the burst
            break
    else:
        line = line.strip().split(' ')
